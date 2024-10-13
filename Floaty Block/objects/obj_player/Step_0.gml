@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description The stuff that happens every frame
 // You can write your code in this editor
 
 
@@ -18,6 +18,8 @@ if (gamepad_button_check(0, gp_face1) && !_pause){
 	ysp = -5
 }
 
+
+
 if gamepad_button_check(0, gp_start){
 	_pause = false
 		
@@ -25,8 +27,10 @@ if gamepad_button_check(0, gp_start){
 
 
 
-if (place_meeting(x,y,object_wall) || place_meeting(x+1,y+1,object_wall) || place_meeting(x, y-1,object_wall)){
+if (place_meeting(x+1,y+1,[obj_wall, obj_ground]) || place_meeting(x-1, y-1,[obj_wall, obj_ground])){
 	room_restart()
 }
 
-move_and_collide(xsp, ysp, object_wall)
+move_and_collide(xsp, ysp, [obj_wall, obj_ground])
+
+
