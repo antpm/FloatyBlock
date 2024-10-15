@@ -1,4 +1,7 @@
+///@description Code that runs when instance is created
+
 window_set_size(1280, 720);
-xsp = 3;
+current_score = 0;
+xsp = 0;
 ysp = 0;
-_pause = false;
+pause = true;

@@ -1,8 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-xsp = 0;
-ysp = 0;
-passed = false;
-
-
+player_score = 0;

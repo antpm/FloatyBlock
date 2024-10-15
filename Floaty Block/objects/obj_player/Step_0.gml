@@ -1,36 +1,29 @@
-/// @description The stuff that happens every frame
-// You can write your code in this editor
+/// @description Code that runs every frame
 
 
-
-if _pause{
+if pause{
 	ysp = 0
-	xsp = 0
 } else {
-	xsp = 3
 	ysp += 0.5
 }
 
-
-
-
-if (gamepad_button_check(0, gp_face1) && !_pause){
+if (gamepad_button_check(0, gp_face1) && !pause){
 	ysp = -5
 }
 
-
-
-if gamepad_button_check(0, gp_start){
-	_pause = false
-		
+if gamepad_button_check_pressed(0, gp_start){
+	pause = !pause	
 }
 
-
-
-if (place_meeting(x+1,y+1,[obj_wall, obj_ground]) || place_meeting(x-1, y-1,[obj_wall, obj_ground])){
+if (place_meeting(x,y+1,obj_wall) || place_meeting(x, y-1,obj_wall) || place_meeting(x+1, y, obj_wall)){
 	room_restart()
 }
 
-move_and_collide(xsp, ysp, [obj_wall, obj_ground])
+if place_meeting(x, y+1, obj_ground){
+	room_restart()
+}
+
+move_and_collide(xsp, ysp, obj_roof);
+
 
 
