@@ -16,11 +16,11 @@ if gamepad_button_check_pressed(0, gp_start){
 }
 
 if (place_meeting(x,y+1,obj_wall) || place_meeting(x, y-1,obj_wall) || place_meeting(x+1, y, obj_wall)){
-	room_restart()
+	room_goto(rm_end);
 }
 
 if place_meeting(x, y+1, obj_ground){
-	room_restart()
+	room_goto(rm_end);
 }
 
 move_and_collide(xsp, ysp, obj_roof);

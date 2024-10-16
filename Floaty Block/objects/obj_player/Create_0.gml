@@ -5,3 +5,4 @@ current_score = 0;
 xsp = 0;
 ysp = 0;
 pause = false;
+global.player_score = 0;

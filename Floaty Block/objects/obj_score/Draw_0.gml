@@ -4,4 +4,4 @@
 draw_self();
 draw_set_font(fnt_score);
 
-draw_text(self.x + 10, self.y - 5, $"Score: {player_score}");
+draw_text(self.x + 10, self.y - 5, $"Score: {global.player_score}");
